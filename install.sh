@@ -2,10 +2,13 @@
 
  pnpx create-remix@latest shadcn-001 -y
 
+cd ./shadcn-001
+
 pnpm install -D tailwindcss postcss autoprefixer
 pnpx tailwindcss init --ts -p
 
-cd ./shadcn-001/
+
+
 touch ./app/tailwind.css
 
 # Cria o arquivo tailwind.css e adiciona o conteúdo
