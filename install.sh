@@ -5,12 +5,13 @@
 pnpm install -D tailwindcss postcss autoprefixer
 pnpx tailwindcss init --ts -p
 
-touch ./shadcn-001/app/tailwind.css
+cd ./shadcn-001/
+touch ./app/tailwind.css
 
 # Cria o arquivo tailwind.css e adiciona o conteúdo
 echo "@tailwind base;
 @tailwind components;
-@tailwind utilities;" > ./shadcn-001/app/tailwind.css
+@tailwind utilities;" > ./app/tailwind.css
 
 
 echo "import type { Config } from 'tailwindcss'
@@ -60,7 +61,7 @@ fi
 # npx shadcn-ui@latest init
 
 
-touch .components.json
+touch ./components.json
 
 echo "
 {
@@ -80,7 +81,7 @@ echo "
     \"utils\": \"~/lib/utils\"
   }
 }
-" > .components.json
+" > ./components.json
 
 pnpm i class-variance-authority clsx lucide-react tailwind-merge tailwindcss-animate 
 
@@ -164,7 +165,7 @@ const config = {
   plugins: [require(\"tailwindcss-animate\")],
 } satisfies Config
 
-export default config " > tailwind.config.ts
+export default config " > ./tailwind.config.ts
 
 
 
@@ -245,10 +246,10 @@ echo "
       @apply bg-background text-foreground;
     }
   }
-" > ./shadcn-001/app/tailwind.css
+" > ./app/tailwind.css
 
-mkdir ./shadcn-001/app/lib/
-touch ./shadcn-001/app/lib/utils.ts
+mkdir ./app/lib/
+touch ./app/lib/utils.ts
 
 echo "
   import { type ClassValue, clsx } from \"clsx\"
@@ -257,4 +258,6 @@ import { twMerge } from \"tailwind-merge\"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-" > ./shadcn-001/app/lib/utils.ts
+" > ./app/lib/utils.ts
+
+npx shadcn-ui@latest add --all
