@@ -5,12 +5,12 @@
 pnpm install -D tailwindcss postcss autoprefixer
 pnpx tailwindcss init --ts -p
 
-touch ./app/tailwind.css
+touch ./shadcn-001/app/tailwind.css
 
 # Cria o arquivo tailwind.css e adiciona o conteúdo
 echo "@tailwind base;
 @tailwind components;
-@tailwind utilities;" > ./app/tailwind.css
+@tailwind utilities;" > ./shadcn-001/app/tailwind.css
 
 
 echo "import type { Config } from 'tailwindcss'
@@ -92,7 +92,7 @@ const config = {
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
+    './shadcn-001/app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
 	],
   prefix: \"\",
@@ -245,10 +245,10 @@ echo "
       @apply bg-background text-foreground;
     }
   }
-" > ./app/tailwind.css
+" > ./shadcn-001/app/tailwind.css
 
-mkdir ./app/lib/
-touch ./app/lib/utils.ts
+mkdir ./shadcn-001/app/lib/
+touch ./shadcn-001/app/lib/utils.ts
 
 echo "
   import { type ClassValue, clsx } from \"clsx\"
@@ -257,4 +257,4 @@ import { twMerge } from \"tailwind-merge\"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-" > ./app/lib/utils.ts
+" > ./shadcn-001/app/lib/utils.ts
