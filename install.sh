@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ pnpx create-remix@latest sahdcn-001 -y
 
 pnpm install -D tailwindcss postcss autoprefixer
 pnpx tailwindcss init --ts -p
