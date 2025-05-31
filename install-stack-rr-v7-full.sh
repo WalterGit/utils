@@ -429,7 +429,7 @@ print_success "Instalação finalizada"
 # --- FINALIZAÇÃO ---
 cd "$PATH_COMPLETO"
 
-pnpm dlx shadcn@latest add https://tweakcn.com/r/themes/claude.json -y
+pnpm dlx shadcn@latest add https://tweakcn.com/r/themes/claude.json -y -o
 
 print_message "🎉 PROJETO CRIADO COM SUCESSO!"
 echo ""
