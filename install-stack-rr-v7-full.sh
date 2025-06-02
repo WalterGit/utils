@@ -431,6 +431,8 @@ cd "$PATH_COMPLETO"
 
 pnpm dlx shadcn@latest add https://tweakcn.com/r/themes/claude.json -y -o
 
+pnpm i -D vite-plugin-devtools-json
+
 print_message "🎉 PROJETO CRIADO COM SUCESSO!"
 echo ""
 echo "📦 Projeto: $PROJECT_NAME"
